@@ -115,22 +115,16 @@
   $('#enter-music').focus({preventScroll:true});
 
   // Full photo album: pre-compressed thumbnails, lazy-loaded in small batches.
-  const captions = {
-    together: ['Там, где мы рядом ♡','Наш маленький мир','Этот момент — наш','С тобой теплее','Один из любимых кадров','Сохрани это мгновение'],
-    her: ['Моя любимая ♡','Ты прекрасна','Вот такая ты','Твоя улыбка — целая история','Моменты с тобой','Всегда особенная'],
-    art: ['Наш маленький рисунок ♡','Иллюстрация нашей истории','Всё начинается с любви']
-  };
+  // Unique hand-written captions for every photo, preserving descriptions when filtering.
   const filteredPhotos = () => photos.filter(p => currentFilter === 'all' || p.type === currentFilter);
-  function captionFor(photo, index) {
-    const list = captions[photo.type] || ['Мгновение'];
-    return list[index % list.length];
-  }
+  function captionFor(photo) { return photo.title || 'Наше мгновение'; }
+  function descriptionFor(photo) { return photo.description || ''; }
   function buildPhotoCard(photo, index) {
     const figure = document.createElement('figure');
     figure.className = 'photo-card';
     figure.tabIndex = 0;
     figure.setAttribute('role','button');
-    figure.setAttribute('aria-label',`Открыть фото ${index + 1}. ${captionFor(photo,index)}`);
+    figure.setAttribute('aria-label',`Открыть фото ${index + 1}. ${captionFor(photo)}`);
     const img = document.createElement('img');
     img.src = photo.thumb;
     img.alt = photo.alt;
@@ -139,7 +133,13 @@
     img.width = photo.w;
     img.height = photo.h;
     const figcaption = document.createElement('figcaption');
-    figcaption.textContent = captionFor(photo,index);
+    const title = document.createElement('strong');
+    title.className = 'photo-card-title';
+    title.textContent = captionFor(photo);
+    const note = document.createElement('span');
+    note.className = 'photo-card-note';
+    note.textContent = descriptionFor(photo);
+    figcaption.append(title, note);
     figure.append(img,figcaption);
     figure.addEventListener('click',() => openPhoto(index));
     figure.addEventListener('keydown',event => {
@@ -185,7 +185,17 @@
     const entry = current[lightboxIndex];
     $('#lightbox-img').src = entry.src;
     $('#lightbox-img').alt = entry.alt;
-    $('#lightbox-caption').textContent = `${String(lightboxIndex + 1).padStart(2,'0')} / ${String(current.length).padStart(2,'0')} — ${captionFor(entry,lightboxIndex)}`;
+    const caption = $('#lightbox-caption');
+    const number = document.createElement('span');
+    number.className = 'lightbox-number';
+    number.textContent = `${String(lightboxIndex + 1).padStart(2,'0')} / ${String(current.length).padStart(2,'0')}`;
+    const title = document.createElement('strong');
+    title.className = 'lightbox-title';
+    title.textContent = captionFor(entry);
+    const note = document.createElement('span');
+    note.className = 'lightbox-note';
+    note.textContent = descriptionFor(entry);
+    caption.replaceChildren(number, title, note);
   }
   function openPhoto(index) {
     previousFocus = document.activeElement;
