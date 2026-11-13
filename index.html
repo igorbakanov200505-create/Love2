@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b10">
+  <meta name="description" content="Маленькая вселенная на двоих: наши фотографии, песня, стихи и самое важное письмо.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ты — моя любимая история ♡">
+  <meta property="og:description" content="Сохранил здесь моменты, к которым хочется возвращаться.">
+  <meta property="og:image" content="assets/photos/009.webp">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Ты — моя любимая история ♡</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="photos.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#home">К содержимому</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="hearts" class="heart-layer" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span id="reading-progress"></span></div>
+
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro-stars" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</div>
+    <div class="intro-heart" aria-hidden="true">♡</div>
+    <p class="micro intro-label">не просто сайт. кое-что личное.</p>
+    <h2 id="intro-title">Это — <i>для тебя.</i></h2>
+    <p class="intro-sub">Здесь немного наших мгновений, много нежности и слова, которые я хочу сказать тебе от всего сердца.</p>
+    <div class="intro-buttons">
+      <button type="button" class="button button-glow" id="enter-music">Открыть под нашу песню <span aria-hidden="true">♫</span></button>
+      <button type="button" class="text-button" id="enter-silent">Открыть без звука <span aria-hidden="true">↗</span></button>
+    </div>
+    <p class="intro-tip">Музыку всегда можно включить или выключить.</p>
+  </div>
+
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="На главную"><span class="logo-star">✧</span> ты & я <span class="logo-heart">♡</span></a>
+      <nav class="desktop-menu" aria-label="Основная навигация">
+        <a href="#story">Про нас</a>
+        <a href="#gallery">Фотоальбом</a>
+        <a href="#song">Наша песня</a>
+        <a href="#poems">Стихи</a>
+        <a href="#letter">Письмо</a>
+      </nav>
+      <div class="header-right">
+        <button class="header-song" id="header-music" type="button" aria-label="Включить песню" aria-pressed="false"><span class="eq" aria-hidden="true"><b></b><b></b><b></b><b></b></span><span id="header-music-label">песня</span></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+      <a href="#story">Про нас</a><a href="#gallery">Фотоальбом</a><a href="#song">Наша песня</a><a href="#poems">Стихи</a><a href="#letter">Письмо</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero section-pad" aria-labelledby="main-title">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow reveal"><span class="line"></span> маленькая вселенная для двоих <span class="sparkle">✦</span></div>
+          <h1 class="hero-heading reveal" id="main-title">Из всех историй<br>я выбрал бы<br><em>нашу.</em><span class="hero-period">♡</span></h1>
+          <p class="hero-desc reveal">Мир огромный. В нём столько случайностей, дорог и встреч. Но среди всего этого для меня есть одна особенная история. Та, в которой есть <strong>ты.</strong></p>
+          <div class="hero-buttons reveal">
+            <a class="button button-glow" href="#gallery">Наши мгновения <span aria-hidden="true">↗</span></a>
+            <button type="button" class="button button-outline open-letter">Прочитать письмо <span aria-hidden="true">♡</span></button>
+          </div>
+          <div class="hero-below reveal"><span class="heart-dot">♥</span> каждая фотография здесь — потому что ты важна</div>
+        </div>
+        <div class="hero-art reveal" aria-label="Несколько наших фотографий">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div>
+          <figure class="hero-frame main-frame"><img src="assets/photos/009.webp" alt="Наш совместный солнечный снимок" fetchpriority="high"><figcaption>my favorite place is next to you <span>♡</span></figcaption></figure>
+          <figure class="hero-frame little-frame"><img src="assets/photos/019.webp" alt="Вместе в объятиях" loading="eager"><figcaption>us, always.</figcaption></figure>
+          <div class="sticker-love" aria-hidden="true"><small>you are</small><strong>my<br>favorite</strong><small>♡</small></div>
+          <span class="hero-star star-one" aria-hidden="true">✧</span><span class="hero-star star-two" aria-hidden="true">✴</span>
+        </div>
+      </div>
+      <a href="#story" class="scroll-prompt">Листай нашу историю <span>↓</span></a>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-flow">♥ &nbsp; наша маленькая бесконечность &nbsp; ✦ &nbsp; my favorite person &nbsp; ✦ &nbsp; ты & я &nbsp; ♥ &nbsp; наша маленькая бесконечность &nbsp; ✦ &nbsp; my favorite person &nbsp; ✦ &nbsp; ты & я &nbsp; ♥ &nbsp;</div></div>
+
+    <section class="story section-pad" id="story" aria-labelledby="story-title">
+      <div class="container story-layout">
+        <div class="story-copy reveal">
+          <p class="eyebrow">01 / то, что хочется сохранить</p>
+          <h2 class="section-title" id="story-title">Иногда счастье<br>похоже на <em>тебя.</em></h2>
+          <p>Не каждую эмоцию получается объяснить словами. Иногда она просто остаётся в улыбке, в случайном кадре, во взгляде или в том, как уютно быть рядом.</p>
+          <p>И мне хочется беречь это. Не потому, что всё всегда бывает идеально. А потому, что настоящее — гораздо ценнее идеального.</p>
+          <button type="button" class="link-underlined open-letter">У меня есть для тебя кое-что важное <span aria-hidden="true">↗</span></button>
+          <div class="story-signature">с теплом, для тебя ♡</div>
+        </div>
+        <div class="story-pictures reveal">
+          <figure class="story-pic story-a"><img src="assets/photos/025.webp" alt="Совместное фото, на котором мы рядом" loading="lazy"></figure>
+          <figure class="story-pic story-b"><img src="assets/photos/081.webp" alt="Тёплый кадр из фотоальбома" loading="lazy"></figure>
+          <div class="story-note">ты — мой любимый<br><em>момент.</em> <span>♥</span></div>
+        </div>
+      </div>
+      <div class="container keepsakes reveal">
+        <div class="keepsake"><span>01</span><strong>Твои улыбки</strong><p>В них всегда хочется задержаться чуть дольше.</p></div>
+        <div class="keepsake"><span>02</span><strong>Наши моменты</strong><p>Даже простые дни становятся воспоминаниями.</p></div>
+        <div class="keepsake"><span>03</span><strong>Всё настоящее</strong><p>То, что живёт не в словах, а между нами.</p></div>
+      </div>
+    </section>
+
+    <section class="gallery-section section-pad" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="heading-row reveal"><div><p class="eyebrow">02 / наш фотоальбом</p><h2 class="section-title" id="gallery-title">Моменты, в которых<br><em>живёт наша история.</em></h2></div><p class="heading-aside">Не идеальные постановочные кадры. А то, что хочется пересматривать снова и снова.</p></div>
+        <div class="gallery-toolbar reveal">
+          <div class="gallery-tabs" role="group" aria-label="Фильтр фотоальбома"><button type="button" class="tab active" data-filter="all" aria-pressed="true">Все фото <span id="count-all">138</span></button><button type="button" class="tab" data-filter="together" aria-pressed="false">Мы вдвоём</button><button type="button" class="tab" data-filter="her" aria-pressed="false">Твои кадры</button><button type="button" class="tab" data-filter="art" aria-pressed="false">Рисунки</button></div>
+          <span class="gallery-hint"><span aria-hidden="true">✧</span> нажми на фото, чтобы открыть</span>
+        </div>
+        <div class="photo-grid" id="photo-grid" aria-live="polite"></div>
+        <div class="gallery-footer"><p id="gallery-count" class="gallery-count" aria-live="polite"></p><button type="button" id="more-photos" class="button button-outline">Показать ещё фотографии <span aria-hidden="true">↓</span></button></div>
+      </div>
+    </section>
+
+    <section class="quote-section section-pad" aria-label="Небольшое признание">
+      <div class="container quote-wrap reveal"><span class="quote-tiny">✦ &nbsp; from my heart &nbsp; ✦</span><p>«Я бы не хотел переписывать нашу историю.<br>Я бы хотел, чтобы в ней было <em>ещё много страниц.</em>»</p><span class="quote-heart">♡</span></div>
+    </section>
+
+    <section class="song-section section-pad" id="song" aria-labelledby="song-title">
+      <div class="container song-layout">
+        <div class="song-left reveal"><p class="eyebrow">03 / музыка нашего мира</p><h2 id="song-title" class="section-title">Иногда слова<br><em>превращаются в песню.</em></h2><p>У этой истории есть свой звук. И сегодня он здесь — чтобы можно было слушать, листать наши фотографии и просто чувствовать.</p><p class="song-comment">Нажми на кнопку воспроизведения — песня будет играть, пока ты гуляешь по сайту.</p><div class="song-sparks" aria-hidden="true">✧ &nbsp; ✦ &nbsp; ♡ &nbsp; ✦ &nbsp; ✧</div></div>
+        <div class="record-card reveal">
+          <div class="record-top"><span>our soundtrack</span><span>♡ side A</span></div>
+          <div class="record-body"><div class="vinyl" id="vinyl" aria-hidden="true"><div class="vinyl-inner"><span>♥</span><small>YOU & ME</small></div></div><div class="record-label"><span>САУНДТРЕК К НАШИМ МОМЕНТАМ</span><h3>Все мои мысли<br><i>о тебе.</i></h3><p>NEVERLOVE × Hofmannita</p></div></div>
+          <div class="track-progress"><span id="time-current">0:00</span><label class="sr-only" for="seek">Перемотка песни</label><input type="range" min="0" max="1000" value="0" id="seek" aria-label="Перемотать песню"><span id="time-total">0:00</span></div>
+          <div class="track-buttons"><button type="button" id="rewind" aria-label="Назад на 10 секунд" class="round-control side-control">↶ <small>10</small></button><button type="button" id="main-play" class="round-control main-control" aria-label="Воспроизвести песню"><span id="main-play-icon">▶</span></button><button type="button" id="forward" aria-label="Вперёд на 10 секунд" class="round-control side-control">↷ <small>10</small></button></div>
+          <div class="track-footer"><span id="audio-status" aria-live="polite">Нажми, чтобы послушать ♡</span><div class="volume-wrap"><span aria-hidden="true">♫</span><label class="sr-only" for="volume">Громкость</label><input type="range" min="0" max="100" value="65" id="volume" aria-label="Громкость песни"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poetry-section section-pad" id="poems" aria-labelledby="poetry-title">
+      <div class="container"><div class="center-heading reveal"><p class="eyebrow">04 / немного стихов для тебя</p><h2 id="poetry-title" class="section-title">Между строк —<br><em>то, что чувствую.</em></h2><p>Не чужие цитаты. Несколько строк, которые мне хочется подарить именно тебе.</p></div>
+      <div class="poems-grid">
+        <article class="poem-card reveal"><span class="poem-number">I <span>✧</span></span><h3>Тихое счастье</h3><p>В мире, где тысячи разных дорог,<br>Случай однажды нам встретиться смог.<br>И среди шума, сомнений, суеты<br>Самой прекрасной осталась мне ты.<br><br>Время торопится, дни всё бегут,<br>Но есть мгновения, что в сердце живут.<br>Пусть они будут согреты теплом —<br>Тем, что мы вместе с тобою найдём.</p><span class="poem-footer">для тебя ♡</span></article>
+        <article class="poem-card poem-highlight reveal"><span class="poem-number">II <span>♡</span></span><h3>Если бы можно</h3><p>Если бы можно коснуться весны,<br>Я бы принёс тебе запах сирени.<br>Если бы можно хранить наши сны,<br>Я бы сберёг их от всех изменений.<br><br>Но мне важнее обычный рассвет,<br>Смех твой знакомый, и голос, и взгляд.<br>Ведь ничего удивительнее нет,<br>Чем знать, что тебе я по-настоящему рад.</p><span class="poem-footer">ты — мой свет ♡</span></article>
+        <article class="poem-card reveal"><span class="poem-number">III <span>✧</span></span><h3>Неидеальные мы</h3><p>Любовь — не страницы красивых легенд,<br>Не клятвы, что ветер уносит с собою.<br>Она — это выбор беречь каждый день<br>И быть настоящими рядом друг с другом.<br><br>Не страшно, что разные мы иногда,<br>Что мир непростой и меняются планы.<br>Хочу я учиться быть ближе всегда,<br>И нежно беречь наши общие раны.</p><span class="poem-footer">с любовью ♡</span></article>
+      </div></div>
+    </section>
+
+    <section class="reels-section section-pad" id="reels" aria-labelledby="reels-title"><div class="container"><div class="heading-row reveal"><div><p class="eyebrow">05 / воспоминания в движении</p><h2 id="reels-title" class="section-title">Не только фото.<br><em>Живые моменты.</em></h2></div><p class="heading-aside">Два маленьких видео из нашего архива. Включи любое — музыка на сайте автоматически остановится, чтобы не мешать.</p></div><div class="reels-grid"><figure class="video-card reveal"><video controls preload="none" playsinline poster="assets/reels/poster-1.webp"><source src="assets/reels/reel-1.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video><figcaption><span>01 / видеовоспоминание</span><span>♡</span></figcaption></figure><figure class="video-card reveal"><video controls preload="none" playsinline poster="assets/reels/poster-2.webp"><source src="assets/reels/reel-2.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video><figcaption><span>02 / видеовоспоминание</span><span>♡</span></figcaption></figure></div></div></section>
+
+    <section class="tiny-joys section-pad" aria-labelledby="joy-title"><div class="container joys-inner reveal"><span class="joy-deco">♥</span><div><p class="eyebrow">06 / маленький секрет</p><h2 id="joy-title" class="section-title">Есть ещё кое-что,<br><em>за что я люблю тебя.</em></h2><p>Нажимай на сердечко — каждый раз тебя ждут другие слова.</p><div id="reason-text" class="reason-text" aria-live="polite">Ты умеешь делать обычные минуты особенными.</div><button id="reason-button" class="button button-glow" type="button">Ещё одна причина <span aria-hidden="true">♥</span></button></div><div class="joy-ring" aria-hidden="true"><span>♡</span><small>for you</small></div></div></section>
+
+    <section class="letter-section section-pad" id="letter" aria-labelledby="letter-title"><div class="container letter-grid"><div class="letter-copy reveal"><p class="eyebrow">07 / самое главное</p><h2 class="section-title" id="letter-title">Есть слова, которые<br>лучше сказать <em>сердцем.</em></h2><p>Фотографии хранят мгновения. Музыка хранит настроение. А это письмо — то, что я хочу сказать тебе без спешки.</p><p class="letter-whisper">Только ты. Только эти слова. Только наше.</p><button type="button" class="button button-glow open-letter">Открыть письмо <span aria-hidden="true">↗</span></button></div><button type="button" class="envelope-scene open-letter reveal" aria-label="Открыть любовное письмо"><span class="envelope-shadow"></span><span class="envelope-paper"><span>для самой особенной<br>девушки ♡</span></span><span class="envelope-back"></span><span class="envelope-front"></span><span class="envelope-flap"></span><span class="envelope-seal">♥</span><span class="envelope-caption">нажми, чтобы открыть</span></button></div></section>
+
+    <section class="final-section section-pad"><div class="container final-inner reveal"><span class="final-sparkle">✦ &nbsp; ♡ &nbsp; ✦</span><h2>И если ты дочитала<br>до самого конца…</h2><p>Просто знай: для меня ты гораздо больше, чем все эти фотографии, стихи и песни. Спасибо, что ты есть в моей жизни.</p><div class="final-heart">♡</div><button class="button button-outline" id="hearts-button" type="button">Поймать немного любви <span aria-hidden="true">♥</span></button><a class="back-top" href="#top">вернуться к началу ↑</a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand">только для тебя <span>♡</span></div><span>Собрано из наших мгновений, с любовью.</span><span id="copyright-year"></span></div></footer>
+
+  <aside class="floating-player" id="floating-player" aria-label="Музыкальный плеер"><div class="floating-player-art">♥</div><div class="floating-player-info"><span>наш саундтрек</span><strong>NEVERLOVE × Hofmannita</strong><div class="floating-progress"><span id="floating-progress-fill"></span></div></div><button type="button" id="float-play" aria-label="Воспроизвести песню" class="floating-play">▶</button><button type="button" id="float-close" aria-label="Скрыть мини-плеер" class="floating-close">×</button></aside>
+  <audio id="our-audio" src="assets/audio/our-song.mp3" preload="metadata" loop></audio>
+
+  <div class="overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографий" hidden><div class="overlay-shade" data-close="lightbox"></div><button type="button" class="overlay-close" data-close="lightbox" aria-label="Закрыть фото">×</button><button type="button" class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Предыдущее фото">‹</button><figure class="lightbox-content"><img id="lightbox-img" alt=""><figcaption id="lightbox-caption"></figcaption></figure><button type="button" class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Следующее фото">›</button></div>
+
+  <div class="overlay" id="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-modal-title" hidden><div class="overlay-shade" data-close="letter-modal"></div><div class="letter-modal-content"><button type="button" class="modal-close" data-close="letter-modal" aria-label="Закрыть письмо">×</button><div class="paper-inner"><span class="paper-ornament">✦ &nbsp; ♡ &nbsp; ✦</span><p class="paper-intro">письмо от сердца</p><h2 id="letter-modal-title">Моя любимая…</h2><p>Я долго думал, какими словами можно передать то, что чувствую. И понял: самые важные вещи не обязательно говорить красиво. Главное — говорить искренне.</p><p>Когда я смотрю на наши фотографии, я вижу не только лица, места и отдельные мгновения. Я вижу человека, который стал для меня по-настоящему особенным. Тебя. Твою улыбку, взгляд, привычки, твой характер — всё, что делает тебя именно тобой.</p><p>Я люблю не какой-то придуманный идеальный образ. Я люблю настоящую тебя — со всем, что ты чувствуешь, о чём мечтаешь, из-за чего переживаешь и чему радуешься. Я хочу слышать тебя, понимать лучше и учиться беречь то хорошее, что есть между нами.</p><p>Мне не хочется обещать, что жизнь всегда будет простой. Я хочу другого: чтобы в ней находилось место для честных разговоров, уважения, тепла, заботы и самых обычных счастливых дней.</p><p>Спасибо тебе за моменты, которые уже стали частью моей жизни. За каждую улыбку, которую я помню. За то, что рядом с тобой даже маленькие вещи могут значить очень много.</p><p>И если однажды тебе станет интересно, насколько ты для меня важна, просто вернись на эту страницу. Я собрал здесь только малую часть того, что хотел бы сказать.</p><p class="paper-emphasis">Я люблю тебя. Не за что-то. А потому, что ты — это ты. ♡</p><p class="paper-sign">С любовью,<br><em>тот, чьё сердце выбрало тебя</em></p><button type="button" class="paper-end" id="letter-hearts">Отправить сердечко в ответ ♥</button></div></div></div>
+</body>
+</html>
